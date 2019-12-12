@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+	    <recentorder>
+            <general>
+                <enabled>1</enabled>
+                <fakeinfo>1</fakeinfo>
+                <product_ids>5,10,15,20</product_ids>
+                <faketime>a few minutes ago, 5 minutes ago, 15 minutes ago</faketime>
+                <fakeaddress>Hanoi - VN, New York - US, Sydney - Australia</fakeaddress>
+                <limit>10</limit>
+                <speed>10000</speed>
+            </general>
+        </recentorder>
+	</default>
+</config>

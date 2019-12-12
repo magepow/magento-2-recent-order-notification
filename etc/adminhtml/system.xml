@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="Magepow" translate="label" sortOrder="86">
+            <label>Magepow</label>
+        </tab>
+        <section id="recentorder" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Recentorder</label>
+            <tab>Magepow</tab>
+            <resource>Magepow_Recentorder::config_recentorder</resource>
+            <group id="general" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Recent Order Notification Products</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <comment>Enabled Recent Order</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="fakeinfo" translate="label comment" type="select" sortOrder="20"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use Fake info order</label>
+                    <comment>Use Fake info order</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends><field id="enabled" separator=",">1</field></depends>
+                </field>
+                <field id="product_ids" translate="label comment" type="text" sortOrder="30"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Fake product Ids</label>
+                    <comment>Comma-separated.</comment>
+                    <depends><field id="fakeinfo" separator=",">1</field></depends>
+                    <validate>validate-per-page-value-list</validate>
+                </field>
+                <field id="faketime" translate="label comment" type="text" sortOrder="45"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Fake times purchased</label>
+                    <comment>a few minutes ago, 5 minutes ago, 15 minutes ago</comment>
+                    <depends><field id="fakeinfo" separator=",">1</field></depends>
+                </field>
+                <field id="fakeaddress" translate="label comment" type="text" sortOrder="45"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Fake order shipping address</label>
+                    <comment>Hanoi - VN, New York - US, Sydney - Australia</comment>
+                    <depends><field id="fakeinfo" separator=",">1</field></depends>
+                </field>
+                <field id="limit" translate="label comment" type="text" sortOrder="50"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Limit</label>
+                    <comment>Limit products</comment>
+                    <validate>validate-greater-than-zero</validate>
+                    <depends><field id="enabled" separator=",">1</field></depends>
+                </field>
+                <field id="speed" translate="label comment" type="text" sortOrder="55"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Speed</label>
+                    <comment>Speed</comment>
+                    <validate>validate-greater-than-zero</validate>
+                    <depends><field id="enabled" separator=",">1</field></depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
