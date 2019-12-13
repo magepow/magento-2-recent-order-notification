@@ -29,6 +29,6 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Recentorder`
 
 **Speed:** Enter the product swap time(ms)
 ### This Is Result In Frontend
- ![result-img](https://github.com/magepow/magento2-recentorder/blob/master/media/recent_order.jpg)
+ ![result-img](https://github.com/magepow/magento2-recentorder/blob/master/media/recent-result.gif)
  [![Latest Stable Version](https://poser.pugx.org/magepow/recentorder/v/stable)](https://packagist.org/packages/magepow/recentorder)
 [![Total Downloads](https://poser.pugx.org/magepow/recentorder/downloads)](https://packagist.org/packages/magepow/recentorder)
