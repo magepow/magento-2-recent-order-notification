@@ -98,10 +98,11 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
         $type = $this->getTypeFilter();
         $fn = 'get' . ucfirst($type);
         $collection = $this->{$fn}();
+        /*
         if ($this->_stockConfig->isShowOutOfStock() != 1) {
             $this->_stockFilter->addInStockFilterToCollection($collection);
         }
-
+        */
         $collection->setPageSize($this->_limit)->setCurPage(1);
 
         $this->_eventManager->dispatch(
@@ -112,56 +113,20 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
         return $collection;
     }
 
-
-    public function getRecentOrder(){
-
+    public function getFakePurchased()
+    {
         $producIds = array();
-
-        if(isset($this->_recentConfig['fakeinfo']) && $this->_recentConfig['fakeinfo']){
-            if(isset($this->_recentConfig['product_ids']) && $this->_recentConfig['product_ids']){
-                $producIds = $this->_recentConfig['product_ids'];
-                $producIds = explode(',',$producIds);
-                $faketime = explode(',', $this->_recentConfig['faketime']);
-                $fakeaddress = explode(',', $this->_recentConfig['fakeaddress']);
-                foreach ( $producIds as $key => $id ) {
-                    $info = array();
-                    $info['time'] = isset($faketime[$key]) ? $faketime[$key]: $faketime[array_rand($faketime)];
-                    $address = isset($fakeaddress[$key]) ? $fakeaddress[$key]: $fakeaddress[array_rand($fakeaddress)];
-                    $info['address'] = sprintf(__('from %s'), $address);
-                    $this->_orderInfo[$id] = $info;
-                    # code...
-                }
-            }
-        } else {
-            $ordercollection = $this->_objectManager->get('Magento\Sales\Model\Order')->getCollection()
-                                                                ->addFieldToSelect(array('*'))
-                                                                ->setOrder('entity_id','DESC')
-                                                                ->setPageSize($this->_limit*5)
-                                                                ->setCurPage(1);
-
-            $i = 0;
-            foreach ($ordercollection as $orderDatamodel) {
-                $orderId   =   $orderDatamodel->getId();
-                $shippingAddress  = $orderDatamodel->getShippingAddress();
-                $info       = array();
-                $city       = $shippingAddress->getCity();
-                $country    = $shippingAddress->getData('country_id');
-                $info['address'] = sprintf(__('from %s, %s'), $city, $country);
-                $order = $this->_objectManager->create('\Magento\Sales\Model\Order')->load($orderId);
-                $orderItems = $order->getAllVisibleItems();
-                foreach ($orderItems as $item) {
-                    $productId = $item->getProductId();
-                    if(!in_array($productId, $producIds)){
-                        $id = $item->getProductId();
-                        $producIds[]    =   $id;
-                        $info['time']   = $item->getData('created_at');
-                        $this->_orderInfo[$id] = $info;
-                        $i ++;
-                        if($i >= $this->_limit) break;
-                    } 
-
-                }
-                if($i >= $this->_limit) break;
+        if(isset($this->_recentConfig['product_ids']) && $this->_recentConfig['product_ids']){
+            $producIds = $this->_recentConfig['product_ids'];
+            $producIds = explode(',',$producIds);
+            $faketime = explode(',', $this->_recentConfig['faketime']);
+            $fakeaddress = explode(',', $this->_recentConfig['fakeaddress']);
+            foreach ( $producIds as $key => $id ) {
+                $info = array();
+                $info['time'] = isset($faketime[$key]) ? $faketime[$key]: $faketime[array_rand($faketime)];
+                $address = isset($fakeaddress[$key]) ? $fakeaddress[$key]: $fakeaddress[array_rand($fakeaddress)];
+                $info['address'] = sprintf(__('from %s'), $address);
+                $this->_orderInfo[$id] = $info;
             }
         }
 
@@ -172,8 +137,61 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
             $collection
         )->addStoreFilter()->addAttributeToFilter('entity_id', array('in' => $producIds));
 
-        return $collection;
+        return $collection;      
+    }
+
+    public function getPurchased()
+    {
+        $producIds = array();
+        $ordercollection = $this->_objectManager->get('Magento\Sales\Model\Order')
+                                                ->getCollection()
+                                                ->addFieldToSelect(array('*'))
+                                                ->setOrder('entity_id','DESC')
+                                                ->setPageSize($this->_limit*5)
+                                                ->setCurPage(1);
+
+        $i = 0;
+        foreach ($ordercollection as $orderDatamodel) {
+            $orderId   =   $orderDatamodel->getId();
+            $shippingAddress  = $orderDatamodel->getShippingAddress();
+            $info       = array();
+            $city       = $shippingAddress->getCity();
+            $country    = $shippingAddress->getData('country_id');
+            $info['address'] = sprintf(__('from %s, %s'), $city, $country);
+            $order = $this->_objectManager->create('\Magento\Sales\Model\Order')->load($orderId);
+            $orderItems = $order->getAllVisibleItems();
+            foreach ($orderItems as $item) {
+                $productId = $item->getProductId();
+                if(!in_array($productId, $producIds)){
+                    $id = $item->getProductId();
+                    $producIds[]    =   $id;
+                    $info['time']   = $item->getData('created_at');
+                    $this->_orderInfo[$id] = $info;
+                    $i ++;
+                    if($i >= $this->_limit) break;
+                } 
+
+            }
+            if($i >= $this->_limit) break;
+        }
+
+        $collection = $this->_productCollectionFactory->create();
+        $collection->setVisibility($this->_catalogProductVisibility->getVisibleInCatalogIds());
+
+        $collection = $this->_addProductAttributesAndPrices(
+            $collection
+        )->addStoreFilter()->addAttributeToFilter('entity_id', array('in' => $producIds));
+
+        return $collection;       
+    }
+
+    public function getRecentOrder(){
+
+        if(isset($this->_recentConfig['fakeinfo']) && $this->_recentConfig['fakeinfo']){
+            return $this->getFakePurchased();
+        }
         
+        return $this->getPurchased();
     }
 
     public function getInfoPurchased(\Magento\Catalog\Model\Product $product)

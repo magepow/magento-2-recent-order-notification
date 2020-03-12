@@ -35,8 +35,8 @@ define([
 		            var slideWidth    = suggest.find('.slider >.item').width();
 		            var slideHeight   = suggest.find('.slider >.item').height();
 		            var sliderUlWidth = slideCount * slideWidth;
-		            // suggest.find('.notify-slider').css({ width: slideWidth, height: slideHeight });
-		            suggest.find('.notify-slider .slider').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+		            /*suggest.find('.notify-slider').css({ width: slideWidth, height: slideHeight });*/
+		            suggest.find('.notify-slider .slider').css({ width: sliderUlWidth});
 		            suggest.find('.notify-slider .slider >.item:last-child').prependTo('.notify-slider .slider');
 		            setTimeout(function(){ el.slideDown('slow'); }, firsttime);
 		            if(!autoplay) return;
@@ -65,9 +65,9 @@ define([
 
 	      	};
 
-	      	if (methods[options]) { // $("#element").pluginName('methodName', 'arg1', 'arg2');
+	      	if (methods[options]) {
 	        	return methods[options].apply(this, Array.prototype.slice.call(arguments, 1));
-	      	} else if (typeof options === 'object' || !options) { // $("#element").pluginName({ option: 1, option:2 });
+	      	} else if (typeof options === 'object' || !options) {
 	        	return methods.init.apply(this);
 	      	} else {
 	        	$.error('Method "' + method + '" does not exist in timer plugin!');

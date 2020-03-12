@@ -5,7 +5,10 @@
     </head>
 	<body>
 	    <referenceContainer name="before.body.end">
-	    	<block class="Magepow\Recentorder\Block\RecentOrder" name="recentorder.recent.order" template="recentorder.phtml" />
+	    	<block class="Magepow\Recentorder\Block\RecentOrder" name="recentorder.recent.order" 
+		    		template="recentorder.phtml"
+		    		ifconfig="recentorder/general/enabled"
+	    		/>
 	    </referenceContainer>
 	</body>
 </page>

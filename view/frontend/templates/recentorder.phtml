@@ -25,13 +25,11 @@ use Magento\Framework\App\Action\Action;
 		$_helper = $this->helper('Magento\Catalog\Helper\Output');
 		$_aloHelper = $this->helper('Magepow\Recentorder\Helper\Data');
 		?>
-		<span class="x-close">Close</span>
-		<div class="mage-magictabs mc-<?php echo $this->escapeHtml($this->getTypeFilter());?> activated">
+		<span class="x-close"><?= __('Close') ?></span>
+		<div class="mage-magictabs mc-<?php /* @escapeNotVerified */ echo $this->escapeHtml($this->getTypeFilter());?> activated">
 		<?php if (!$_productCollection->count()): ?>
 		    <div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
 		<?php else: ?>
-		    <?php //echo $block->getToolbarHtml() ?>
-		    <?php //echo $block->getAdditionalHtml() ?>
 		    <?php
 		        $viewMode = 'grid';
 		        $image = 'category_page_grid';
@@ -65,7 +63,7 @@ use Magento\Framework\App\Action\Action;
 		                    <div class="images-container">
 		                        <div class="product-hover">
 		                            <?php echo $_aloHelper->getLabels($_product); ?>
-		                            <?php //echo $_aloHelper->getTimer($_product); ?>
+		                            <?php /*echo $_aloHelper->getTimer($_product);*/ ?>
 		                            <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
 		                                <?php echo $productImage->toHtml(); ?>
 		                            </a>
