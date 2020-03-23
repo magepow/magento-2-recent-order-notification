@@ -125,7 +125,7 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
                 $info = array();
                 $info['time'] = isset($faketime[$key]) ? $faketime[$key]: $faketime[array_rand($faketime)];
                 $address = isset($fakeaddress[$key]) ? $fakeaddress[$key]: $fakeaddress[array_rand($fakeaddress)];
-                $info['address'] = sprintf(__('from %s'), $address);
+                $info['address'] = __('from %1', $address);
                 $this->_orderInfo[$id] = $info;
             }
         }
@@ -157,7 +157,7 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
             $info       = array();
             $city       = $shippingAddress->getCity();
             $country    = $shippingAddress->getData('country_id');
-            $info['address'] = sprintf(__('from %s, %s'), $city, $country);
+            $info['address'] = __('from %1, %2', $city, $country);
             $order = $this->_objectManager->create('\Magento\Sales\Model\Order')->load($orderId);
             $orderItems = $order->getAllVisibleItems();
             foreach ($orderItems as $item) {
