@@ -12,18 +12,22 @@ use Magento\Framework\App\Action\Action;
 /**
  * Product list template
  *
- * @var $block \Magepow\Recentorder\Block\Recent\Order
+ * @var $block \Magepow\Recentorder\Block\RecentOrder
  */
 ?>
-<?php if( !$this->getWidgetCfg('enabled') ) return; ?>
 <?php $selector = 'alo-content-'. uniqid(); ?>
-<div class= "<?php /* @escapeNotVerified */ echo $selector?> recentorder suggest-slider autoplay" data-autoplay="true" data-speed="<?php echo $this->getWidgetCfg('speed') ?>">
+<div class= "<?php /* @escapeNotVerified */ echo $selector?> recentorder suggest-slider autoplay" 
+    <?php foreach ($this->getFrontendCfg() as $opt) {
+    	$value = $this->getConfig( 'general/' . $opt );
+    	echo $value ? 'data-' . $opt . '="' . $value . '"' : '';
+    }
+    ?>
+	>
 	<div class="notify-slider-wrapper content-products"       
 	>
 		<?php
 		$_productCollection = $block->getLoadedProductCollection();
 		$_helper = $this->helper('Magento\Catalog\Helper\Output');
-		$_aloHelper = $this->helper('Magepow\Recentorder\Helper\Data');
 		?>
 		<span class="x-close"><?= __('Close') ?></span>
 		<div class="mage-magictabs mc-<?php /* @escapeNotVerified */ echo $this->escapeHtml($this->getTypeFilter());?> activated">
@@ -62,8 +66,6 @@ use Magento\Framework\App\Action\Action;
 		                    <?php // Product Image ?>
 		                    <div class="images-container">
 		                        <div class="product-hover">
-		                            <?php echo $_aloHelper->getLabels($_product); ?>
-		                            <?php /*echo $_aloHelper->getTimer($_product);*/ ?>
 		                            <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
 		                                <?php echo $productImage->toHtml(); ?>
 		                            </a>

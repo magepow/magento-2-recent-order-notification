@@ -9,14 +9,12 @@ define([
 	      	var defaults = {
 		        autoplay   : true,
 		        firsttime  : 3000,
-		        timeout    : 3000,
-		        interval   : 10000
+		        speed      : 9000
 	      	};
 
 			var settings    = $.extend(defaults, options);
-			var firsttime   = settings.firsttime;
-			var timeout     = settings.timeout;
-			var interval    = settings.interval;
+			var firsttime   = parseInt(settings.firsttime);
+			var speed    	= parseInt(settings.speed);
 			var autoplay    = settings.autoplay;
 
 	      	var methods = {
@@ -38,19 +36,21 @@ define([
 		            /*suggest.find('.notify-slider').css({ width: slideWidth, height: slideHeight });*/
 		            suggest.find('.notify-slider .slider').css({ width: sliderUlWidth});
 		            suggest.find('.notify-slider .slider >.item:last-child').prependTo('.notify-slider .slider');
-		            setTimeout(function(){ el.slideDown('slow'); }, firsttime);
-		            if(!autoplay) return;
-		            setInterval(function () {
-		                el.slideUp({
-		                        duration:'slow', 
-		                        easing: 'swing',
-		                        complete: function(){
-		                            methods.moveRight(suggest, slideWidth);
-		                            setTimeout(function(){ el.slideDown('slow'); }, timeout);
-		                        }
-		                    });
+		            setTimeout(function(){
+		            	el.slideDown('slow'); 
+			            if(!autoplay) return;
+			            setInterval(function () {
+			                el.slideUp({
+			                        duration:'slow', 
+			                        easing: 'swing',
+			                        complete: function(){
+			                            methods.moveRight(suggest, slideWidth);
+			                            setTimeout(function(){ el.slideDown('slow'); }, speed/2);
+			                        }
+			                    });
 
-		            }, interval);
+			            }, speed);
+		            }, firsttime);
 		        },
 
 		        moveRight: function(suggest, slideWidth){
@@ -87,4 +87,3 @@ define([
 
 	/* End notifySlider */
 });
-

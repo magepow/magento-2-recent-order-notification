@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
 	<default>
-	    <recentorder>
+	    <magepow_recentorder>
             <general>
                 <enabled>1</enabled>
                 <fakeinfo>1</fakeinfo>
@@ -9,8 +9,10 @@
                 <faketime>a few minutes ago, 5 minutes ago, 15 minutes ago</faketime>
                 <fakeaddress>Hanoi - VN, New York - US, Sydney - Australia</fakeaddress>
                 <limit>10</limit>
-                <speed>10000</speed>
+                <autoplay>1</autoplay>
+                <firsttime>3000</firsttime>
+                <speed>9000</speed>
             </general>
-        </recentorder>
+        </magepow_recentorder>
 	</default>
 </config>

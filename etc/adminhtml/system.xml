@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="magepow" translate="label" sortOrder="300">
+        <tab id="magepow" translate="label" sortOrder="89">
             <label>Magepow</label>
         </tab>
-        <section id="recentorder" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="magepow_recentorder" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Recent Order</label>
             <tab>magepow</tab>
@@ -44,9 +44,21 @@
                     <validate>validate-greater-than-zero</validate>
                     <depends><field id="enabled" separator=",">1</field></depends>
                 </field>
+                <field id="autoplay" translate="label comment" type="select" sortOrder="20"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Autoplay</label>
+                    <comment>Autoplay</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends><field id="enabled" separator=",">1</field></depends>
+                </field>
+                <field id="firsttime" translate="label comment" type="text" sortOrder="55"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Time Show Notify</label>
+                    <comment>First Time Show wait notify when start</comment>
+                    <validate>validate-greater-than-zero</validate>
+                    <depends><field id="enabled" separator=",">1</field></depends>
+                </field>
                 <field id="speed" translate="label comment" type="text" sortOrder="55"  showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Speed</label>
-                    <comment>Speed</comment>
+                    <comment>Speed Next time</comment>
                     <validate>validate-greater-than-zero</validate>
                     <depends><field id="enabled" separator=",">1</field></depends>
                 </field>

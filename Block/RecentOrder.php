@@ -43,8 +43,7 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
     protected $_limit; // Limit Product
     protected $_orderInfo; // Limit Product
 
-    public $_scopeConfig;
-    public $_recentConfig;
+    protected $_helper;
 
     /**
      * @param Context $context
@@ -61,6 +60,7 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
         \Magento\Catalog\Model\Product\Visibility $catalogProductVisibility,
         \Magento\CatalogInventory\Helper\Stock $stockFilter,
         \Magento\CatalogInventory\Model\Configuration $stockConfig,
+        \Magepow\Recentorder\Helper\Data $helper,
         array $data = []
     ) {
         $this->urlHelper = $urlHelper;
@@ -69,8 +69,7 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
         $this->_catalogProductVisibility = $catalogProductVisibility;
         $this->_stockFilter = $stockFilter;
         $this->_stockConfig = $stockConfig;
-        $this->_scopeConfig = $context->getScopeConfig();
-        $this->_recentConfig = $this->_scopeConfig->getValue( 'recentorder/general', \Magento\Store\Model\ScopeInterface::SCOPE_STORE );
+        $this->_helper      = $helper;
         parent::__construct( $context, $data );
     }
 
@@ -79,22 +78,19 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
         return 'RecentOrder';
     }
 
-    public function getWidgetCfg($cfg=null)
+    public function getConfig($cfg=null)
     {
-        $info = $this->_recentConfig;
-        if($info){
-            if(isset($info[$cfg])) return $info[$cfg];
-            return $info;          
-        }else {
-            $info = $this->getCfg();
-            if(isset($info[$cfg])) return $info[$cfg];
-            return $info;
-        }
+        return $this->_helper->getConfigModule($cfg);
+    }
+
+    public function getFrontendCfg()
+    {
+        return $this->_helper->getConfigNotifySlider();
     }
 
     public function getLoadedProductCollection()
     {
-        $this->_limit = (int) $this->getWidgetCfg('limit');
+        $this->_limit = (int) $this->getConfig('limit');
         $type = $this->getTypeFilter();
         $fn = 'get' . ucfirst($type);
         $collection = $this->{$fn}();
