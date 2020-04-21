@@ -17,11 +17,11 @@ use Magento\Framework\App\Action\Action;
 ?>
 <?php $selector = 'alo-content-'. uniqid(); ?>
 <div class= "<?php /* @escapeNotVerified */ echo $selector?> recentorder suggest-slider autoplay" 
-    <?php foreach ($this->getFrontendCfg() as $opt) {
+    <?php foreach ($this->getFrontendCfg() as $opt) :
     	$value = $this->getConfig( 'general/' . $opt );
-    	echo $value ? 'data-' . $opt . '="' . $value . '"' : '';
-    }
     ?>
+    	data-<?php echo $opt ?>='<?php echo $value ?>'
+   	<?php endforeach ?>
 	>
 	<div class="notify-slider-wrapper content-products"       
 	>
