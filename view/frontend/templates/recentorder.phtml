@@ -36,7 +36,11 @@ use Magento\Framework\App\Action\Action;
 		<?php else: ?>
 		    <?php
 		        $viewMode = 'grid';
+		        /*
 		        $image = 'category_page_grid';
+		        $image = 'product_page_image_small';
+		        */
+		        $image = 'mini_cart_product_thumbnail';
 		        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
 		    /**
 		     * Position for actions regarding image size changing in vde if needed
