@@ -39,7 +39,7 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
      * @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory
      */
     protected $_productCollectionFactory;
-	
+    
     protected $_limit; // Limit Product
     protected $_orderInfo; // Limit Product
 
@@ -112,11 +112,11 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
     public function getFakePurchased()
     {
         $producIds = array();
-        if(isset($this->_recentConfig['product_ids']) && $this->_recentConfig['product_ids']){
-            $producIds = $this->_recentConfig['product_ids'];
-            $producIds = explode(',',$producIds);
-            $faketime = explode(',', $this->_recentConfig['faketime']);
-            $fakeaddress = explode(',', $this->_recentConfig['fakeaddress']);
+        $fakeIds = $this->getConfig('general/product_ids');
+        if($fakeIds){
+            $producIds   = explode(',', $fakeIds);
+            $faketime    = explode(',', $this->getConfig('general/faketime'));
+            $fakeaddress = explode(',', $this->getConfig('general/fakeaddress'));
             foreach ( $producIds as $key => $id ) {
                 $info = array();
                 $info['time'] = isset($faketime[$key]) ? $faketime[$key]: $faketime[array_rand($faketime)];
@@ -183,7 +183,7 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
 
     public function getRecentOrder(){
 
-        if(isset($this->_recentConfig['fakeinfo']) && $this->_recentConfig['fakeinfo']){
+        if($this->getConfig('general/fakeinfo')){
             return $this->getFakePurchased();
         }
         
@@ -202,7 +202,7 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
 
     public function getInfoTime($time)
     {
-        if(isset($this->_recentConfig['fakeinfo']) && $this->_recentConfig['fakeinfo']){
+        if($this->getConfig('general/fakeinfo')){
             return $time;
         }
 
