@@ -151,9 +151,11 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
             $orderId   =   $orderDatamodel->getId();
             $shippingAddress  = $orderDatamodel->getShippingAddress();
             $info       = array();
-            $city       = $shippingAddress->getCity();
-            $country    = $shippingAddress->getData('country_id');
-            $info['address'] = __('from %1, %2', $city, $country);
+            if($shippingAddress){
+                $city       = $shippingAddress->getCity();
+                $country    = $shippingAddress->getData('country_id');
+                $info['address'] = __('from %1, %2', $city, $country);
+            }
             $order = $this->_objectManager->create('\Magento\Sales\Model\Order')->load($orderId);
             $orderItems = $order->getAllVisibleItems();
             foreach ($orderItems as $item) {
