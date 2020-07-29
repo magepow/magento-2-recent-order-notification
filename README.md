@@ -7,11 +7,12 @@ On the small popup, the extension allows store owners to show the main informati
 ### ✓ Install Magepow Recentorder via composer (recommend)
 Run the following command in Magento 2 root folder:
 
-`composer require magepow/recentorder`
+```
+composer require magepow/recentorder
+php bin/magento setup:upgrade
+php bin/magento setup:static-content:deploy -f
+```
 
-`php bin/magento setup:upgrade`
-
-`php bin/magento setup:static-content:deploy -f`
 ## 2. Magepow Recentorder user guide
 ### General Configuration
 #### Setting Magepow Recentorder
@@ -36,6 +37,13 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Recentorder`
 
 **Detail User Guide**
 * [Magento 2 Recent Order Document](https://docs.alothemes.com/m2/extension/recentorder/)
+
+## Donation
+
+If this project help you reduce time to develop, you can give me a cup of coffee :) 
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/paypalme/alopay)
+
 
 **Other free extensions**
 
