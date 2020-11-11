@@ -126,10 +126,6 @@ use Magento\Framework\App\Action\Action;
 		                                                        <i class="icon-bar-chart icons"></i><?php /* @escapeNotVerified */ echo __('Add to Compare') ?>
 		                                                    </a>
 		                                                <?php endif; ?>
-		                                                <div class="link-view">
-		                                                    <button type="button" class="quickview <?php echo $_product->getTypeId() ?>"  title="<?php echo $block->escapeHtml(__('Quick View')); ?>" onclick="jQuery.fn.quickview({url:'<?php echo $this->getUrl('recentorder/product/view', array('id' => $_product->getId(), '_type' => 'direct_link', '_secure'=>$this->getRequest()->isSecure()) ) ?>'});"><span><!-- <i class="fa fa-eye icon"></i> --><?php echo __('Quick View')?></span>
-		                                                    </button>
-		                                                </div>
 		                                                </div>
 		                                            <?php endif; ?>
 		                                    </div>
