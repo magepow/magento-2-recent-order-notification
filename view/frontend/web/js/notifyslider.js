@@ -25,9 +25,11 @@ define([
 		        },
 		        
 		        suggestLoad: function(suggest){
+		        	if (sessionStorage.getItem("recent_order_off")) return;
 		            var el  = suggest.find('.notify-slider-wrapper');
 		            suggest.find('.x-close').click(function() {
-		                suggest.addClass('close')
+		                suggest.addClass('close');
+		                sessionStorage.setItem("recent_order_off","1");
 		            });
 		            var slideCount    = suggest.find('.slider >.item').length;
 		            var slideWidth    = suggest.find('.slider >.item').width();
