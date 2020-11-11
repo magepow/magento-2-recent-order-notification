@@ -46,8 +46,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return [
             'autoplay',
+            'close_off',
             'firsttime',
-            'speed',
+            'speed'
         ];
     }
 

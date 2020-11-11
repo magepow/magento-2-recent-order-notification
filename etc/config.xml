@@ -10,6 +10,7 @@
                 <fakeaddress>Hanoi - VN, New York - US, Sydney - Australia</fakeaddress>
                 <limit>10</limit>
                 <autoplay>1</autoplay>
+                <close_off>1</close_off>
                 <firsttime>3000</firsttime>
                 <speed>9000</speed>
             </general>

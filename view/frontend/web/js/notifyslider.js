@@ -8,6 +8,7 @@ define([
 	    $.fn.notifySlider = function (options) {
 	      	var defaults = {
 		        autoplay   : true,
+		        close_off  : true,
 		        firsttime  : 3000,
 		        speed      : 9000
 	      	};
@@ -16,6 +17,7 @@ define([
 			var firsttime   = parseInt(settings.firsttime);
 			var speed    	= parseInt(settings.speed);
 			var autoplay    = settings.autoplay;
+			var closeOff 	= settings.close_off;
 
 	      	var methods = {
 		        init : function() {
@@ -25,11 +27,11 @@ define([
 		        },
 		        
 		        suggestLoad: function(suggest){
-		        	if (sessionStorage.getItem("recent_order_off")) return;
+		        	if (closeOff && sessionStorage.getItem("recently_order_click_close")) return;
 		            var el  = suggest.find('.notify-slider-wrapper');
 		            suggest.find('.x-close').click(function() {
 		                suggest.addClass('close');
-		                sessionStorage.setItem("recent_order_off","1");
+		                sessionStorage.setItem("recently_order_click_close", closeOff);
 		            });
 		            var slideCount    = suggest.find('.slider >.item').length;
 		            var slideWidth    = suggest.find('.slider >.item').width();

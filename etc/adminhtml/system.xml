@@ -28,7 +28,7 @@
                     <depends><field id="fakeinfo" separator=",">1</field></depends>
                     <validate>validate-per-page-value-list</validate>
                 </field>
-                <field id="faketime" translate="label comment" type="text" sortOrder="45"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="faketime" translate="label comment" type="text" sortOrder="40"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Fake times purchased</label>
                     <comment>a few minutes ago, 5 minutes ago, 15 minutes ago</comment>
                     <depends><field id="fakeinfo" separator=",">1</field></depends>
@@ -44,19 +44,25 @@
                     <validate>validate-greater-than-zero</validate>
                     <depends><field id="enabled" separator=",">1</field></depends>
                 </field>
-                <field id="autoplay" translate="label comment" type="select" sortOrder="20"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="autoplay" translate="label comment" type="select" sortOrder="55"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Autoplay</label>
                     <comment>Autoplay</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <depends><field id="enabled" separator=",">1</field></depends>
                 </field>
-                <field id="firsttime" translate="label comment" type="text" sortOrder="55"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="close_off" translate="label comment" type="select" sortOrder="60"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Don't show again when close</label>
+                    <comment>Don't show again in current page or other pages when customer click to button close</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends><field id="enabled" separator=",">1</field></depends>
+                </field>
+                <field id="firsttime" translate="label comment" type="text" sortOrder="65"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>First Time Show Notify</label>
                     <comment>First Time Show wait notify when start</comment>
                     <validate>validate-greater-than-zero</validate>
                     <depends><field id="enabled" separator=",">1</field></depends>
                 </field>
-                <field id="speed" translate="label comment" type="text" sortOrder="55"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="speed" translate="label comment" type="text" sortOrder="70"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Speed</label>
                     <comment>Speed Next time</comment>
                     <validate>validate-greater-than-zero</validate>
