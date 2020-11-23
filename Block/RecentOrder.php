@@ -101,11 +101,6 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
         */
         $collection->setPageSize($this->_limit)->setCurPage(1);
 
-        $this->_eventManager->dispatch(
-            'catalog_block_product_list_collection',
-            ['collection' => $collection]
-        );
-
         return $collection;
     }
 
