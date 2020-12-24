@@ -1,6 +1,9 @@
 {
   "name": "magepow/recentorder",
   "description": "Show beautiful recent sales popups to notify visitors of recently bought items.",
+  "require": {
+    "magepow/core": "^1.0.0"
+  },
   "type": "magento2-module",
   "license": [
     "OSL-3.0",
