@@ -1,10 +1,34 @@
-# Magento 2 Extention Recentorder
-**Recentorder Magento extension** (Magepow Recentorder Extension) for Magento show beautiful recent sales popups to notify visitors of recently bought items. When you have very small amount of order, you can show fake order instead to attract customers.
+## Magento 2 Order Notification 
+**Recent order notification Magento 2 extension** shows beautiful recent sales popups to notify visitors of recently bought items. When you have very small amount of order, you can show fake orders instead to attract customers.
 
-On the small popup, the extension allows store owners to show the main information of the product.  Therefore, customers or visitors can have brief information about that product or also click on the popup to go directly to the product detail page. They also can close it by just one click if they feel it is annoying.
+On the small popup, the extension allows store owners to show the main information of the product. Therefore, customers or visitors can have brief information about that product or also click on the popup to go directly to the product detail page. They also can close it by just one click if they feel it is annoying.
 
-## 1. How to install Magento 2 Recentorder
-### ✓ Install Magepow Recentorder via composer (recommend)
+### Features
+
+#### Show recent order popup on the website
+
+Recent order popup can be displayed on any page on your website (homepage, product page, blog). This extension helps websites notify users about products that were most recently sold through a small popup. Notification popup provides customers with summary information about the order such as name product, time of purchase, address of the customer. Customers can click on this popup to be navigated directly to the product detail page.
+
+#### Created fake order to attract customers
+
+Order notifications that appear at the right time when customers visit your store increase your store's credibility and convertibility. Based on the ID products, administrators can choose any product on the website that matches the store's business strategy. Some products are commonly applied in this case such as promotional products, new products, ...
+Fake order is built by selecting elements in the admin panel: Fake product Ids, Fake times purchased, Fake order shipping address
+
+#### Easy to customize and configure
+
+- Ability Enable/disable Recent Order Notification quickly
+
+- Set limit of displaying popup number
+
+- Set the speed of displaying
+
+- Set up display time to pause popup between two notification
+
+- Smart design, without affecting other parts of the website
+
+## How to set up Magepow_Recent Order Notification?
+### 1. How to install Magento 2 Recentorder
+#### ✓ Install Magepow Recentorder via composer (recommend)
 Run the following command in Magento 2 root folder:
 
 ```
@@ -13,9 +37,9 @@ php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy -f
 ```
 
-## 2. Magepow Recentorder user guide
-### General Configuration
-#### Setting Magepow Recentorder
+### 2. Magepow Recentorder user guide
+#### General Configuration
+##### Setting Magepow Recentorder
 Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Recentorder`
 ![config-module-img](https://github.com/magepow/magento2-recentorder/blob/master/media/recent_order1.jpg)
 
@@ -32,7 +56,7 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Recentorder`
 **Limit:** Enter the number limit products
 
 **Speed:** Enter the product swap time(ms)
-### This Is Result In Frontend
+#### This Is Result In Frontend
  ![result-img](https://github.com/magepow/magento2-recentorder/blob/master/media/recent-result.gif)
 
 **Detail User Guide**
