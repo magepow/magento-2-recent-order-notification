@@ -26,6 +26,9 @@ Fake order is built by selecting elements in the admin panel: Fake product Ids, 
 
 - Smart design, without affecting other parts of the website
 
+[![Latest Stable Version](https://poser.pugx.org/magepow/recentorder/v/stable)](https://packagist.org/packages/magepow/recentorder)
+[![Total Downloads](https://poser.pugx.org/magepow/recentorder/downloads)](https://packagist.org/packages/magepow/recentorder)
+
 ## How to set up Magepow_Recent Order Notification?
 ### 1. How to install Magento 2 Recentorder
 #### ✓ Install Magepow Recentorder via composer (recommend)
@@ -129,5 +132,4 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 
 * [Kuteshop responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/kuteshop-multipurpose-responsive-magento-1-2-theme/12985435)
 
-[![Latest Stable Version](https://poser.pugx.org/magepow/recentorder/v/stable)](https://packagist.org/packages/magepow/recentorder)
-[![Total Downloads](https://poser.pugx.org/magepow/recentorder/downloads)](https://packagist.org/packages/magepow/recentorder)
+
