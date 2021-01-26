@@ -90,7 +90,7 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
 
     public function getLoadedProductCollection()
     {
-        $this->_limit = (int) $this->getConfig('limit');
+        $this->_limit = (int) $this->getConfig('general/limit');
         $type = $this->getTypeFilter();
         $fn = 'get' . ucfirst($type);
         $collection = $this->{$fn}();
@@ -134,11 +134,12 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
     public function getPurchased()
     {
         $producIds = array();
+        $orderLimit = $this->_limit*5;
         $ordercollection = $this->_objectManager->get('Magento\Sales\Model\Order')
                                                 ->getCollection()
-                                                ->addFieldToSelect(array('*'))
+                                                ->addFieldToSelect('*')
                                                 ->setOrder('entity_id','DESC')
-                                                ->setPageSize($this->_limit*5)
+                                                ->setPageSize($orderLimit)
                                                 ->setCurPage(1);
 
         $i = 0;
