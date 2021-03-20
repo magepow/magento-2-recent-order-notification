@@ -43,6 +43,8 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
     protected $_limit; // Limit Product
     protected $_orderInfo; // Limit Product
 
+    protected $_storeManager;
+
     protected $_helper;
 
     /**
@@ -61,6 +63,7 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
         \Magento\CatalogInventory\Helper\Stock $stockFilter,
         \Magento\CatalogInventory\Model\Configuration $stockConfig,
         \Magepow\Recentorder\Helper\Data $helper,
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
         array $data = []
     ) {
         $this->urlHelper = $urlHelper;
@@ -70,6 +73,7 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
         $this->_stockFilter = $stockFilter;
         $this->_stockConfig = $stockConfig;
         $this->_helper      = $helper;
+        $this->_storeManager = $storeManager;
         parent::__construct( $context, $data );
     }
 
@@ -131,17 +135,34 @@ class RecentOrder extends \Magento\Catalog\Block\Product\AbstractProduct
         return $collection;      
     }
 
+    public function getStoreId()
+    {
+        $store_id = $this->_storeManager->getStore()->getId();
+        return $store_id;
+    }
+
     public function getPurchased()
     {
         $producIds = array();
         $orderLimit = $this->_limit*5;
-        $ordercollection = $this->_objectManager->get('Magento\Sales\Model\Order')
-                                                ->getCollection()
-                                                ->addFieldToSelect('*')
-                                                ->setOrder('entity_id','DESC')
-                                                ->setPageSize($orderLimit)
-                                                ->setCurPage(1);
-
+        $store_id = $this->getStoreId();
+        $filterbystore = $this->getConfig('general/filterbystore');
+        if($filterbystore)
+            $ordercollection = $this->_objectManager->get('Magento\Sales\Model\Order')
+                ->getCollection()
+                ->addFieldToSelect('*')
+                ->addFieldToFilter('store_id', ['eq' =>  $store_id])
+                ->setOrder('entity_id','DESC')
+                ->setPageSize($orderLimit)
+                ->setCurPage(1);
+        else
+            $ordercollection = $this->_objectManager->get('Magento\Sales\Model\Order')
+                ->getCollection()
+                ->addFieldToSelect('*')
+                ->setOrder('entity_id','DESC')
+                ->setPageSize($orderLimit)
+                ->setCurPage(1);
+                
         $i = 0;
         foreach ($ordercollection as $orderDatamodel) {
             $orderId   =   $orderDatamodel->getId();

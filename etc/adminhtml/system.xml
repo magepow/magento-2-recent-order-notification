@@ -22,6 +22,12 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <depends><field id="enabled" separator=",">1</field></depends>
                 </field>
+                <field id="filterbystore" translate="label comment" type="select" sortOrder="25"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Filter by store</label>
+                    <comment>Only select it when you have multi-store and you want to show only products of orders by current store</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends><field id="fakeinfo" separator=",">0</field></depends>
+                </field>
                 <field id="product_ids" translate="label comment" type="text" sortOrder="30"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Fake product Ids</label>
                     <comment>Comma-separated.</comment>

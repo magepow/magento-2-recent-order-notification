@@ -5,6 +5,7 @@
             <general>
                 <enabled>1</enabled>
                 <fakeinfo>1</fakeinfo>
+                <filterbystore>0</filterbystore>
                 <product_ids>5,10,15,20</product_ids>
                 <faketime>a few minutes ago, 5 minutes ago, 15 minutes ago</faketime>
                 <fakeaddress>Hanoi - VN, New York - US, Sydney - Australia</fakeaddress>
