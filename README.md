@@ -1,4 +1,4 @@
-## Magento 2 Order Notification 
+## Magento 2 Recent Order Notification 
 **Recent order notification Magento 2 extension** shows beautiful recent sales popups to notify visitors of recently bought items. When you have very small amount of order, you can show fake orders instead to attract customers.
 
 On the small popup, the extension allows store owners to show the main information of the product. Therefore, customers or visitors can have brief information about that product or also click on the popup to go directly to the product detail page. They also can close it by just one click if they feel it is annoying.
@@ -72,7 +72,9 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/paypalme/alopay)
 
 
-**Other free extensions**
+**[Our Magento 2 Extensions](https://magepow.com/magento-2-extensions.html)**
+
+* [Magento 2 Recent Sales Notification](https://magepow.com/magento-2-recent-sales-notification.html)
 
 * [Magento Categories Extension](https://magepow.com/magento-categories-extension.html)
 
@@ -81,10 +83,6 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 * [Magento Ajax Contact](https://magepow.com/magento-ajax-contact-form.html)
 
 * [Magento Lazy Load](https://magepow.com/magento-lazy-load.html)
-
-**Premium extensions**
-
-* [Magento Speed Optimizer](https://magepow.com/magento-speed-optimizer.html)
 
 * [Magento 2 Mutil Translate](https://magepow.com/magento-multi-translate.html)
 
@@ -96,7 +94,7 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 
 * [Magento Product Banner](https://magepow.com/magento-banner-slider.html)
 
-**Featured Magento services**
+**[Our Magento services](https://magepow.com/magento-services.html)**
 
 * [PSD to Magento 2 Theme Conversion](https://magepow.com/psd-to-magento-theme-conversion.html)
 
@@ -114,22 +112,20 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 
 * [Hire Magento Developer](https://magepow.com/hire-magento-developer.html)
 
-**Featured Magento Themes**
+**[Our Magento Themes](https://alothemes.com/)**
 
-* [Expert Multipurpose responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/expert-premium-responsive-magento-2-and-1-support-rtl-magento-2-/21667789)
+* [Expert Multipurpose Responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/expert-premium-responsive-magento-2-and-1-support-rtl-magento-2-/21667789)
 
-* [Gecko Premium responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/gecko-responsive-magento-2-theme-rtl-supported/24677410)
+* [Gecko Premium Responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/gecko-responsive-magento-2-theme-rtl-supported/24677410)
 
-* [Milano Fashion responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/milano-fashion-responsive-magento-1-2-theme/12141971)
+* [Milano Fashion Responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/milano-fashion-responsive-magento-1-2-theme/12141971)
 
-* [Electro responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/electro-responsive-magento-1-2-theme/17042067)
+* [Electro Responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/electro-responsive-magento-1-2-theme/17042067)
 
-* [Pizzaro food responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/pizzaro-food-responsive-magento-1-2-theme/19438157)
+* [Pizzaro Food responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/pizzaro-food-responsive-magento-1-2-theme/19438157)
 
 * [Biolife organic responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/biolife-organic-food-magento-2-theme-rtl-supported/25712510)
 
 * [Market responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/market-responsive-magento-2-theme/22997928)
 
 * [Kuteshop responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/kuteshop-multipurpose-responsive-magento-1-2-theme/12985435)
-
-
