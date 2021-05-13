@@ -28,6 +28,7 @@ Fake order is built by selecting elements in the admin panel: Fake product Ids, 
 
 [![Latest Stable Version](https://poser.pugx.org/magepow/recentorder/v/stable)](https://packagist.org/packages/magepow/recentorder)
 [![Total Downloads](https://poser.pugx.org/magepow/recentorder/downloads)](https://packagist.org/packages/magepow/recentorder)
+[![Daily Downloads](https://poser.pugx.org/magepow/recentorder/d/daily)](https://packagist.org/packages/magepow/recentorder)
 
 ## How to set up Magepow_Recent Order Notification?
 ### 1. How to install Magento 2 Recentorder
