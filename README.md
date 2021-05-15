@@ -1,7 +1,13 @@
 ## Magento 2 Recent Order Notification 
-**Recent order notification Magento 2 extension** shows beautiful recent sales popups to notify visitors of recently bought items. When you have very small amount of order, you can show fake orders instead to attract customers.
+[**Recent order notification Magento 2 extension by Magepow**](https://magepow.com/magento-2-recent-order-notification.html) shows beautiful recent sales popups to notify visitors of recently bought items. When you have very small amount of order, you can show fake orders instead to attract customers.
 
 On the small popup, the extension allows store owners to show the main information of the product. Therefore, customers or visitors can have brief information about that product or also click on the popup to go directly to the product detail page. They also can close it by just one click if they feel it is annoying.
+ 
+[![result-recent-order-notification-for-magento-img](https://github.com/magepow/magento-2-recent-order-notification/blob/master/media/frontend-recent-order-notification.png)](https://magepow.com/magento-2-recent-order-notification.html)
+
+[![Latest Stable Version](https://poser.pugx.org/magepow/recentorder/v/stable)](https://packagist.org/packages/magepow/recentorder)
+[![Total Downloads](https://poser.pugx.org/magepow/recentorder/downloads)](https://packagist.org/packages/magepow/recentorder)
+[![Daily Downloads](https://poser.pugx.org/magepow/recentorder/d/daily)](https://packagist.org/packages/magepow/recentorder)
 
 ### Features
 
@@ -25,10 +31,6 @@ Fake order is built by selecting elements in the admin panel: Fake product Ids, 
 - Set up display time to pause popup between two notification
 
 - Smart design, without affecting other parts of the website
-
-[![Latest Stable Version](https://poser.pugx.org/magepow/recentorder/v/stable)](https://packagist.org/packages/magepow/recentorder)
-[![Total Downloads](https://poser.pugx.org/magepow/recentorder/downloads)](https://packagist.org/packages/magepow/recentorder)
-[![Daily Downloads](https://poser.pugx.org/magepow/recentorder/d/daily)](https://packagist.org/packages/magepow/recentorder)
 
 ## How to set up Magepow_Recent Order Notification?
 ### 1. How to install Magento 2 Recentorder
