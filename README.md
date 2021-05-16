@@ -3,7 +3,7 @@
 
 On the small popup, the extension allows store owners to show the main information of the product. Therefore, customers or visitors can have brief information about that product or also click on the popup to go directly to the product detail page. They also can close it by just one click if they feel it is annoying.
  
-[![result-recent-order-notification-for-magento-img](https://github.com/magepow/magento-2-recent-order-notification/blob/master/media/frontend-recent-order-notification.png)](https://magepow.com/magento-2-recent-order-notification.html)
+[![result-recent-order-notification-for-magento-img](https://github.com/magepow/magento-2-recent-order-notification/blob/master/media/frontend-recent-order-notification.png)](https://magepow.com/magento-2-multi-translate.html)
 
 [![Latest Stable Version](https://poser.pugx.org/magepow/recentorder/v/stable)](https://packagist.org/packages/magepow/recentorder)
 [![Total Downloads](https://poser.pugx.org/magepow/recentorder/downloads)](https://packagist.org/packages/magepow/recentorder)
