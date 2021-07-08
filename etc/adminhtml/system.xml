@@ -8,7 +8,7 @@
             <class>separator-top</class>
             <label>Recent Order</label>
             <tab>magepow</tab>
-            <resource>Magepow_Recentorder::config_recentorder</resource>
+            <resource>Magepow_Recentorder::config</resource>
             <group id="general" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Recent Order Notification Products</label>
                 <field id="enabled" translate="label comment" type="select" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
