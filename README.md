@@ -33,7 +33,7 @@ Fake order is built by selecting elements in the admin panel: Fake product Ids, 
 - Smart design, without affecting other parts of the website
 
 ## How to set up Magepow_Recent Order Notification?
-#### 1. Buy it
+### 1. Buy it
   [Buy it on Magepow](https://magepow.com/magento-2-recent-order-notification.html)
 
 ### 2. Magepow Recentorder user guide
