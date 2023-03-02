@@ -1,3 +1,5 @@
+[<img src="https://github.com/magepow/themeforest/blob/master/shopify/shopify_affiliate.jpg" >](https://shopify.pxf.io/VyL446)
+
 ## Magento 2 Recent Order Notification 
 [**Recent order notification Magento 2 extension by Magepow**](https://magepow.com/magento-2-recent-order-notification.html) shows beautiful recent sales popups to notify visitors of recently bought items. When you have very small amount of order, you can show fake orders instead to attract customers.
 
